@@ -3,7 +3,7 @@ import { domElements } from './domElements';
 import { handleResponse } from './utils';
 
 // API URL configuration
-const GEO_API_URL = 'http://api.openweathermap.org/geo/1.0/';
+const GEO_API_URL = 'https://api.openweathermap.org/geo/1.0/';
 const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/';
 const API_KEY = '03eee01b4a0dd55879e44806d5f2345b';
 
