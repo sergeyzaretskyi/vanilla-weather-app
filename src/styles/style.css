@@ -1,0 +1,365 @@
+@import './reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
+:root {
+  --black-color: rgb(38, 38, 38);
+  --grey-color: rgb(155, 155, 155);
+  --white-color: rgb(249, 249, 249);
+  --bg-color: rgb(239, 239, 239);
+  --shadow-color: rgb(203, 203, 203);
+  --border-color: rgb(231, 231, 231);
+
+  --border-radius: 8px;
+}
+
+.none {
+  display: none;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--bg-color);
+  font-size: 18px;
+
+  color: var(--black-color);
+}
+
+.container {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.today-forecast__inner,
+.hourly-forecast__inner,
+.daily-forecast__inner,
+.error-section__inner {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  margin-top: 16px;
+  padding: 15px;
+
+  min-height: 140px;
+
+  background-color: var(--white-color);
+
+  -webkit-box-shadow: 0px 5px 15px 0px var(--shadow-color);
+  -moz-box-shadow: 0px 5px 15px 0px var(--shadow-color);
+  box-shadow: 0px 5px 15px 0px var(--shadow-color);
+
+  transition: border 0.3;
+}
+
+.today-forecast__inner:hover,
+.hourly-forecast__inner:hover,
+.daily-forecast__inner:hover {
+  border: 1px solid var(--white-color);
+}
+
+/* Classes used in the entire markup */
+
+.temp {
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+.time,
+.day {
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Header */
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 25px 0;
+  padding-left: 15px;
+}
+
+.logo__link {
+  color: var(--black-color);
+
+  transition: color 0.3s;
+}
+
+.logo__link:hover {
+  color: var(--grey-color);
+}
+
+.nav__item {
+  position: relative;
+}
+
+.nav__input {
+  padding-left: 15px;
+  width: 100%;
+  height: 48px;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+
+  -webkit-box-shadow: 0px 5px 15px 0px var(--shadow-color);
+  -moz-box-shadow: 0px 5px 15px 0px var(--shadow-color);
+  box-shadow: 0px 5px 15px 0px var(--shadow-color);
+
+  transition: border 0.3s;
+}
+
+.nav__input:hover {
+  border: 1px solid var(--grey-color);
+}
+
+.nav__input:focus {
+  border: 1px solid var(--grey-color);
+}
+
+.btn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+
+  width: 36px;
+  height: 36px;
+
+  color: var(--white-color);
+  background-color: var(--black-color);
+  border-radius: var(--border-radius);
+  background-image: url('https://img.icons8.com/material-rounded/24/FFFFFF/nui2.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+
+  transition: opacity 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Top Section */
+
+.today-forecast__inner {
+  display: flex;
+  align-items: center;
+}
+
+.today-forecast--clear-sky {
+  background: url('https://img.icons8.com/external-fauzidea-flat-fauzidea/100/null/external-sunny-weather-fauzidea-flat-fauzidea-2.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgba(255, 239, 189, 1) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--few-clouds {
+  background: url('https://img.icons8.com/office/80/null/fog-day--v1.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(223, 208, 168) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--scattered-clouds {
+  background: url('https://img.icons8.com/office/80/null/clouds.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(216, 216, 216) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--broken-clouds {
+  background: url('https://img.icons8.com/ios-filled/100/null/clouds.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(135, 136, 155) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--shower-rain {
+  background: url('https://img.icons8.com/dotty/80/null/heavy-rain.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(119, 125, 233) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--rain {
+  background: url('https://img.icons8.com/ios-glyphs/90/null/rain--v1.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(219, 220, 255) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--thunderstorm {
+  background: url('https://img.icons8.com/doodle/96/null/cloud-lighting.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(63, 64, 93) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--snow {
+  background: url('https://img.icons8.com/color/96/null/snow-storm--v1.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(203, 225, 255) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.today-forecast--mist {
+  background: url('https://img.icons8.com/ios-glyphs/90/null/foggy-night-1.png'),
+    linear-gradient(90deg, var(--white-color) 50%, rgb(224, 224, 224) 100%);
+  background-repeat: no-repeat;
+  background-position: center right 10%;
+}
+
+.current-temperature {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.current-location {
+  color: var(--grey-color);
+}
+
+.current-weather {
+  color: var(--grey-color);
+  font-size: 0.8em;
+}
+
+/* Hourly Forecast */
+
+.hourly-forecast__list {
+  display: flex;
+  margin-top: 5px;
+}
+
+.hourly-forecast__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  height: 120px;
+  width: 100px;
+}
+
+.hourly-forecast__item--clear-sky,
+.daily-forecast__item--clear-sky,
+.hourly-forecast__item--few-clouds,
+.daily-forecast__item--few-clouds,
+.hourly-forecast__item--scattered-clouds,
+.daily-forecast__item--scattered-clouds,
+.hourly-forecast__item--broken-clouds,
+.daily-forecast__item--broken-clouds,
+.hourly-forecast__item--shower-rain,
+.daily-forecast__item--shower-rain,
+.hourly-forecast__item--rain,
+.daily-forecast__item--rain,
+.hourly-forecast__item--thunderstorm,
+.daily-forecast__item--thunderstorm,
+.hourly-forecast__item--snow,
+.daily-forecast__item--snow,
+.hourly-forecast__item--mist,
+.daily-forecast__item--mist {
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  background-position: center 28px;
+}
+
+.hourly-forecast__item--clear-sky,
+.daily-forecast__item--clear-sky {
+  background-image: url('https://img.icons8.com/external-fauzidea-flat-fauzidea/100/null/external-sunny-weather-fauzidea-flat-fauzidea-2.png');
+}
+
+.hourly-forecast__item--few-clouds,
+.daily-forecast__item--few-clouds {
+  background-image: url('https://img.icons8.com/office/80/null/fog-day--v1.png');
+}
+
+.hourly-forecast__item--scattered-clouds,
+.daily-forecast__item--scattered-clouds {
+  background-image: url('https://img.icons8.com/office/80/null/clouds.png');
+}
+
+.hourly-forecast__item--broken-clouds,
+.daily-forecast__item--broken-clouds {
+  background-image: url('https://img.icons8.com/ios-filled/100/null/clouds.png');
+}
+
+.hourly-forecast__item--shower-rain,
+.daily-forecast__item--shower-rain {
+  background-image: url('https://img.icons8.com/dotty/80/null/heavy-rain.png');
+}
+
+.hourly-forecast__item--rain,
+.daily-forecast__item--rain {
+  background-image: url('https://img.icons8.com/ios-glyphs/90/null/rain--v1.png');
+}
+
+.hourly-forecast__item--thunderstorm,
+.daily-forecast__item--thunderstorm {
+  background-image: url('https://img.icons8.com/doodle/96/null/cloud-lighting.png');
+}
+
+.hourly-forecast__item--snow,
+.daily-forecast__item--snow {
+  background-image: url('https://img.icons8.com/color/96/null/snow-storm--v1.png');
+}
+
+.hourly-forecast__item--mist,
+.daily-forecast__item--mist {
+  background-image: url('https://img.icons8.com/ios-glyphs/90/null/foggy-night-1.png');
+}
+
+.period {
+  color: var(--grey-color);
+  font-size: 0.8em;
+}
+
+/* Daily Forecast */
+
+.daily-forecast__list {
+  display: flex;
+  margin-top: 5px;
+}
+.daily-forecast__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100px;
+  width: 100px;
+}
+
+.daily-forecast__item--clear-sky,
+.daily-forecast__item--few-clouds,
+.daily-forecast__item--scattered-clouds,
+.daily-forecast__item--broken-clouds,
+.daily-forecast__item--shower-rain,
+.daily-forecast__item--rain,
+.daily-forecast__item--thunderstorm,
+.daily-forecast__item--snow,
+.daily-forecast__item--mist {
+  background-position: center;
+}
+
+/* Error Section */
+
+.error-section__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    90deg,
+    rgb(255, 168, 168) 63%,
+    rgb(255, 61, 61) 100%
+  );
+  border: 1px solid red;
+
+  font-size: 1.4rem;
+}
+
+/* Footer */
+
+.footer {
+  margin-bottom: 25px;
+}

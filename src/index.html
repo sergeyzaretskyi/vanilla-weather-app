@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>the.weather</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item logo">
+              <a href="#!" class="logo__link"
+                ><h1 class="logo__text">the.weather</h1></a
+              >
+            </li>
+
+            <li class="nav__item">
+              <input
+                type="text"
+                class="nav__input"
+                placeholder="Search your city..."
+              />
+
+              <button class="btn"></button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="error-section none">
+        <div class="container">
+          <div class="error-section__inner">
+            <p class="error-section__text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="today-forecast">
+        <div class="container">
+          <div class="today-forecast__inner today-forecast--mist">
+            <ul class="today-forecast__list">
+              <li class="today-forecast__item">
+                <h2 class="current-temperature">23&#176;</h2>
+              </li>
+
+              <li class="today-forecast__item">
+                <h3 class="current-location">London, Great Britain</h3>
+              </li>
+
+              <li class="today-forecast__item">
+                <p class="current-weather">clear sky</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="hourly-forecast">
+        <div class="container">
+          <div class="hourly-forecast__inner">
+            <ul class="hourly-forecast__list">
+              <li
+                class="hourly-forecast__item hourly-forecast__item--clear-sky"
+              >
+                <p class="temp">20&#176;</p>
+
+                <p class="time">1:00<br /><span class="period">PM</span></p>
+              </li>
+
+              <li
+                class="hourly-forecast__item hourly-forecast__item--clear-sky"
+              >
+                <p class="temp">16&#176;</p>
+
+                <p class="time">2:00<br /><span class="period">PM</span></p>
+              </li>
+
+              <li
+                class="hourly-forecast__item hourly-forecast__item--clear-sky"
+              >
+                <p class="temp">17&#176;</p>
+
+                <p class="time">3:00<br /><span class="period">PM</span></p>
+              </li>
+
+              <li
+                class="hourly-forecast__item hourly-forecast__item--clear-sky"
+              >
+                <p class="temp">19&#176;</p>
+
+                <p class="time">4:00<br /><span class="period">PM</span></p>
+              </li>
+
+              <li
+                class="hourly-forecast__item hourly-forecast__item--clear-sky"
+              >
+                <p class="temp">23&#176;</p>
+
+                <p class="time">5:00<br /><span class="period">PM</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="daily-forecast">
+        <div class="container">
+          <div class="daily-forecast__inner">
+            <ul class="daily-forecast__list">
+              <li class="daily-forecast__item daily-forecast__item--clear-sky">
+                <p class="temp">20&#176;</p>
+
+                <p class="day">Mon</p>
+              </li>
+
+              <li class="daily-forecast__item daily-forecast__item--clear-sky">
+                <p class="temp">23&#176;</p>
+
+                <p class="day">Tue</p>
+              </li>
+
+              <li class="daily-forecast__item daily-forecast__item--clear-sky">
+                <p class="temp">21&#176;</p>
+
+                <p class="day">Wed</p>
+              </li>
+
+              <li class="daily-forecast__item daily-forecast__item--clear-sky">
+                <p class="temp">20&#176;</p>
+
+                <p class="day">Thu</p>
+              </li>
+
+              <li class="daily-forecast__item daily-forecast__item--clear-sky">
+                <p class="temp">26&#176;</p>
+
+                <p class="day">Fri</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
